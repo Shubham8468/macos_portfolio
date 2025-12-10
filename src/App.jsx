@@ -1,11 +1,11 @@
 import React from 'react';
+import Navbar from "./components/Navbar.jsx";
 
 const App=()=>{
     return (
-        <div>
-            <h1 className='text-3xl font-bold underline'> hello from react</h1>
-
-        </div>
+        <main>
+            <Navbar/>
+        </main>
     )
 }
 export default App;

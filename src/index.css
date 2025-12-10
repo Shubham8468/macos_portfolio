@@ -36,7 +36,7 @@ body {
         @apply w-dvw h-dvh overflow-hidden;
     }
 
-    nav {
+    nav{
         @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
 
         div {
