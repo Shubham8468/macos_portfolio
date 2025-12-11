@@ -4,6 +4,8 @@ import React from 'react'
 //     {id:2,name:"Contact"},
 //     {id:3,name:"Projects"},
 // ]
+import dayjs  from "dayjs";
+
 import {navIcons, navLinks} from '../constants/index.js'
 const Navbar = () => {
     return (
@@ -28,6 +30,10 @@ const Navbar = () => {
                         </li>
                     ))}
                 </ul>
+                <time>
+                    {dayjs().format('ddd D MMM YYYY h:mm A ')}
+                    {/*this is use for the display current time on the screen*/}
+                </time>
             </div>
         </nav>
     )
