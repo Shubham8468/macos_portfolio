@@ -3,8 +3,10 @@ import {dockApps} from "#constants";
 import { Tooltip } from 'react-tooltip'
 import {useGSAP} from "@gsap/react";
 import gsap  from "gsap";
+import useWindowStore from "#store/window.jsx";
 
 const Dock = () => {
+    const {openZIndex,closeZIndex,window} = useWindowStore();
     const dockRef=useRef(null);
 
     useGSAP(()=>{
@@ -17,7 +19,7 @@ const Dock = () => {
                 const {left:iconLeft,width}=icon.getBoundingClientRect();
                 const center=iconLeft - left + width/2;
                 const distance=Math.abs(mouseX-center);
-                const intensity=Math.exp(-(distance ** 2.5)/2500);
+                const intensity=Math.exp(-(distance ** 2.0)/3500);
                 gsap.to(icon,{
                     scale :1 + 0.25 * intensity,
                     y: -15 * intensity,
@@ -46,7 +48,17 @@ const Dock = () => {
         };
     },[]);
    const toggleApp=(app)=>{
-       //TODO Implement Open Window logic
+       //TODO Implement Open Window logics
+       if(!app.canOpen)return;
+       const  win=window[app.id];
+       if(win && win.isOpen){
+           closeZIndex(app.id);
+
+       }else{
+           openZIndex(app.id);
+       }
+       console.log(win);
+
    };
 
     return (
