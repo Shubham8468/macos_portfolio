@@ -1,4 +1,5 @@
 import React from 'react'
+
 // const data=[
 //     {id:1,name:"Portfolio"},
 //     {id:2,name:"Contact"},
@@ -7,7 +8,9 @@ import React from 'react'
 import dayjs  from "dayjs";
 
 import {navIcons, navLinks} from '../constants/index.js'
+import useWindowStore from "#store/window.jsx";
 const Navbar = () => {
+     const {openZIndex}=useWindowStore()
     return (
         <nav>
             <div>
@@ -16,7 +19,7 @@ const Navbar = () => {
                 <ul>
                     {
                         navLinks.map((item,id)=>(
-                            <li key={id}>{item.name}</li>
+                            <li key={id} onClick={()=>openZIndex(item.type)}>{item.name}</li>
                             )
                         )
                     }

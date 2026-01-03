@@ -1,5 +1,5 @@
 import React from 'react';
-import {Terminal} from "windows";
+import {Terminal, Safari, Resume, Finder,Contact} from "windows";
 import {Navbar,Welcome,Dock} from '#components';
 import gsap from 'gsap';
 import {Draggable} from "gsap/Draggable";
@@ -13,8 +13,11 @@ const App=()=>{
             <Welcome/>
             <Dock/>
             <Terminal/>
-
-
+            <Safari/>
+            <Resume/>
+            {/*// to de countinue in future...*/}
+            <Finder/>
+            <Contact />
         </main>
     )
 }

@@ -3,11 +3,11 @@ import useWindowStore from "#store/window.jsx";
 
 const WindowControl = ({target}) => {
 
-   const {closeWindow}=useWindowStore()
+   const {closeZIndex}=useWindowStore()
 
     return (
-        <div id='window-controls' onClick={()=>closeWindow(target)}>
-            <div className='close'>{closeWindow}</div>
+        <div id='window-controls'>
+            <div className='close' onClick={()=>closeZIndex(target)}></div>
             <div className='minimize'></div>
             <div className="maximize"></div>
 
